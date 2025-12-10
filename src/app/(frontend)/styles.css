@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  /* Custom Colors */
+  --color-orange-primary: #e86741;
+  --color-orange-dark: #b84326;
+  --color-red-brown: #6b2a1f;
+
+  /* Custom Font Family */
+  --font-family-geist: var(--font-geist), sans-serif;
+
+  /* Custom Background Images */
+  --background-image-hero-gradient: linear-gradient(135deg, #e86741 0%, #b84326 50%, #6b2a1f 100%);
+}
+
+body {
+  font-family: var(--font-family-geist);
+  background: #FFE3C2;
+}

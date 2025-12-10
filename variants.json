@@ -1,0 +1,34 @@
+[
+    {
+        "name": "interior & landscaping",
+        "description": "Terracotta interior & landscaping pieces add earthy warmth, timeless charm, and natural elegance—indoors and out.",
+        "image": "/images/variants/1.jpg",
+        "price": 180000,
+        "currency": "INR",
+        "category": "interior"
+    },
+    {
+        "name": "home decór",
+        "description": "Elevate your home with decor that blends style and comfort—beautiful accents that turn everyday spaces into inviting stories.",
+        "image": "/images/variants/2.jpg",
+        "price": 200000,
+        "currency": "INR",
+        "category": "urban"
+    },
+    {
+        "name": "wall panelling",
+        "description": "Terracotta wall panelling adds earthy texture, warm tones, and timeless elegance—turning plain walls into statement spaces.",
+        "image": "/images/variants/3.jpg",
+        "price": 150000,
+        "currency": "INR",
+        "category": "nature"
+    },
+    {
+        "name": "stand-alone artforms",
+        "description": "Terracotta standalone artworks bring earthy elegance and handcrafted charm—timeless statement pieces for any space.",
+        "image": "/images/variants/4.jpg",
+        "price": 150000,
+        "currency": "INR",
+        "category": "nature"
+    }
+]
