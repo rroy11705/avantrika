@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import React from 'react'
+import { motion } from 'framer-motion'
 
 interface MissionProps {
   title?: string
@@ -25,47 +28,70 @@ export function Mission({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left side - Content */}
           <div className="col-span-5 text-[#FFEAD2] space-y-8 pb-16 md:pb-24 lg:pb-32">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
               <h2 className="text-5xl md:text-6xl lg:text-5xl font-(family-name:--font-zagora) leading-[97%]">
                 {title}
                 <br />
                 {subtitle}
               </h2>
-            </div>
+            </motion.div>
 
             <div className="space-y-6">
               {paragraphs.map((paragraph, index) => (
-                <p
+                <motion.p
                   key={index}
                   className="text-[#FFEAD2] text-sm md:text-base leading-relaxed font-geist"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.7, delay: 0.2 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 >
                   {paragraph}
-                </p>
+                </motion.p>
               ))}
             </div>
 
-            <div className='mt-20'>
+            <motion.div
+              className='mt-20'
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            >
               <Link
                 href="/variants"
                 className="w-full flex items-center justify-center gap-2 bg-[#FFEAD2] text-[#250405] border border-[#250405] rounded-lg px-8 py-4 text-xl tracking-wider transition-colors duration-300"
               >
                 Get To Know More
               </Link>
-          </div>
+            </motion.div>
           </div>
 
           {/* Right side - Illustration with dome mask */}
-          <div className="col-span-7 relative flex justify-center items-center">
-            <div
-              className="relative w-full"
-            >
-              <img
+          <motion.div
+            className="col-span-7 relative flex justify-center items-center"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="relative w-full">
+              <motion.img
                 src={illustration}
                 alt="Avantrika Mission"
                 className="w-full h-full object-cover"
+                initial={{ scale: 1.1 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

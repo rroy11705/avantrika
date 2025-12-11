@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react'
+import { motion } from 'framer-motion'
 
 interface WhyTerracottaProps {
   className?: string
@@ -10,7 +13,13 @@ export function WhyTerracotta({ className = '' }: WhyTerracottaProps) {
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left side - Logo (Sticky) */}
-          <div className="lg:sticky lg:top-32 lg:self-start flex items-center justify-center h-fit">
+          <motion.div
+            className="lg:sticky lg:top-32 lg:self-start flex items-center justify-center h-fit"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden">
               <img
                 src="/images/avantrika.jpg"
@@ -18,12 +27,18 @@ export function WhyTerracotta({ className = '' }: WhyTerracottaProps) {
                 className="w-full h-full object-contain"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Right side - Content (Scrollable) */}
           <div className="space-y-75">
             {/* Section 1 */}
-            <div className="space-y-6">
+            <motion.div
+              className="space-y-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
               <h2 className="text-4xl md:text-4xl text-[#A42F12] font-(family-name:--font-zagora) leading-tight">
                 Why terracotta works everywhere ?
               </h2>
@@ -33,10 +48,16 @@ export function WhyTerracotta({ className = '' }: WhyTerracottaProps) {
                 materials just can't match. The result: interiors that feel welcoming and
                 landscapes that feel curated, not constructed.
               </p>
-            </div>
+            </motion.div>
 
             {/* Section 2 */}
-            <div className="space-y-6">
+            <motion.div
+              className="space-y-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            >
               <h3 className="text-4xl md:text-4xl text-[#A42F12] font-(family-name:--font-zagora) leading-tight">
                 The vibe: effortlessly premium, always earthy
               </h3>
@@ -46,7 +67,7 @@ export function WhyTerracotta({ className = '' }: WhyTerracottaProps) {
                 connected to the earth—whether you're styling a modern living room or designing a
                 lush outdoor nook.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

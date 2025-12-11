@@ -6,6 +6,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import variantsData from '@/../../variants.json'
 import type { Variant, VariantsProps } from '@/types/variants'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export function Variants({
   title = 'variants categorisation',
@@ -81,7 +82,13 @@ export function Variants({
         </div>
 
         {/* Title - Positioned absolutely to overlap carousel */}
-        <div className="absolute top-0 left-0 right-0 pointer-events-none">
+        <motion.div
+          className="absolute top-0 left-0 right-0 pointer-events-none"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="container mx-auto">
             <h2
               className="text-5xl md:text-6xl lg:text-[145px] text-[#9B1F00] font-(family-name:--font-zagora) leading-[97%]"
@@ -90,60 +97,94 @@ export function Variants({
               {title}
             </h2>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className='container mx-auto space-y-6 pl-44 mt-25'>
+      <motion.div
+        className='container mx-auto space-y-6 pl-44 mt-25'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
         <h3 className="text-3xl text-[#FFEAD2] leading-tight">
           Other Categories
         </h3>
         <div className='flex flex-row items-center justify-start gap-6'>
-          <Link
-            href="/coming-soon"
-            className="w-fit flex items-center justify-center gap-2 text-[#FFEAD280] border border-[#FFEAD280] rounded-lg px-6 py-4 text-base tracking-wider transition-colors duration-300"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 12H18" stroke="#FFEAD280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M12 18V6" stroke="#FFEAD280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <Link
+              href="/coming-soon"
+              className="w-fit flex items-center justify-center gap-2 text-[#FFEAD280] border border-[#FFEAD280] rounded-lg px-6 py-4 text-base tracking-wider transition-colors duration-300"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 12H18" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 18V6" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
 
-            Terracotta Pebbles
-          </Link>
-          <Link
-            href="/coming-soon"
-            className="w-fit flex items-center justify-center gap-2 text-[#FFEAD280] border border-[#FFEAD280] rounded-lg px-6 py-4 text-base tracking-wider transition-colors duration-300"
+              Terracotta Pebbles
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 12H18" stroke="#FFEAD280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M12 18V6" stroke="#FFEAD280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <Link
+              href="/coming-soon"
+              className="w-fit flex items-center justify-center gap-2 text-[#FFEAD280] border border-[#FFEAD280] rounded-lg px-6 py-4 text-base tracking-wider transition-colors duration-300"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 12H18" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 18V6" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
 
-            Lamps
-          </Link>
-          <Link
-            href="/coming-soon"
-            className="w-fit flex items-center justify-center gap-2 text-[#FFEAD280] border border-[#FFEAD280] rounded-lg px-6 py-4 text-base tracking-wider transition-colors duration-300"
+              Lamps
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 12H18" stroke="#FFEAD280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M12 18V6" stroke="#FFEAD280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <Link
+              href="/coming-soon"
+              className="w-fit flex items-center justify-center gap-2 text-[#FFEAD280] border border-[#FFEAD280] rounded-lg px-6 py-4 text-base tracking-wider transition-colors duration-300"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 12H18" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 18V6" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
 
-            Wall Arts
-          </Link>
-          <Link
-            href="/coming-soon"
-            className="w-fit flex items-center justify-center gap-2 text-[#FFEAD280] border border-[#FFEAD280] rounded-lg px-6 py-4 text-base tracking-wider transition-colors duration-300"
+              Wall Arts
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 12H18" stroke="#FFEAD280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M12 18V6" stroke="#FFEAD280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <Link
+              href="/coming-soon"
+              className="w-fit flex items-center justify-center gap-2 text-[#FFEAD280] border border-[#FFEAD280] rounded-lg px-6 py-4 text-base tracking-wider transition-colors duration-300"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 12H18" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 18V6" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
 
-            Ornamentations & Motif Tiles
-          </Link>
+              Ornamentations & Motif Tiles
+            </Link>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

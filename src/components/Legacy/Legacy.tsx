@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react'
+import { motion } from 'framer-motion'
 
 interface LegacySection {
   title: string
@@ -46,14 +49,27 @@ export function Legacy({
     <section className={`relative aspect-1380/850 w-full flex items-center justify-center bg-[#F5EDE4] ${className}`}>
       <div className="container mx-auto px-8 md:px-16 lg:px-24 py-16 md:py-24 lg:py-32">
         {/* Main Title */}
-        <h2 className="text-4xl md:text-5xl lg:text-7xl font-(family-name:--font-zagora) text-[#7D2E3E] mb-12 md:mb-16 lg:mb-20">
+        <motion.h2
+          className="text-4xl md:text-5xl lg:text-7xl font-(family-name:--font-zagora) text-[#7D2E3E] mb-12 md:mb-16 lg:mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
           {mainTitle}
-        </h2>
+        </motion.h2>
 
         {/* Sections List */}
         <div className="space-y-10 md:space-y-12 lg:space-y-16">
           {sections.map((section, index) => (
-            <div key={index} className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-12">
+            <motion.div
+              key={index}
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="md:col-span-4">
                 <h3 className="text-xl md:text-2xl text-[#7D2E3E] font-medium leading-tight">
                   {section.title}
@@ -64,7 +80,7 @@ export function Legacy({
                   {section.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
