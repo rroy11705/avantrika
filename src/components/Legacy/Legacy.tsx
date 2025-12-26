@@ -60,24 +60,24 @@ export function Legacy({
       height: 0,
       opacity: 0,
       transition: {
-        height: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
-        opacity: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
+        height: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const },
+        opacity: { duration: 0.3, ease: [0.22, 1, 0.36, 1] as const },
       },
     },
     expanded: {
       height: 'auto',
       opacity: 1,
       transition: {
-        height: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
-        opacity: { duration: 0.3, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
+        height: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const },
+        opacity: { duration: 0.3, delay: 0.1, ease: [0.22, 1, 0.36, 1] as const },
       },
     },
   }
 
   // Animation variants for chevron rotation
   const chevronVariants = {
-    collapsed: { rotate: 0, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } },
-    expanded: { rotate: 180, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } },
+    collapsed: { rotate: 0, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] as const } },
+    expanded: { rotate: 180, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] as const } },
   }
 
   return (
