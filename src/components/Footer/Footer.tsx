@@ -13,7 +13,7 @@ export function Footer({ className = '' }: FooterProps) {
     <footer className={`relative w-full bg-[#2A0A0D] text-white py-16 md:py-20 lg:py-24 ${className}`}>
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8">
+        <div className="flex flex-row md:flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8">
           {/* Logo */}
           <Link href="/" className="block">
             <Image
@@ -41,22 +41,22 @@ export function Footer({ className = '' }: FooterProps) {
             <h3 className="text-lg font-medium mb-6">Navigate</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-white/70 hover:text-white transition-colors">
+                <Link href="/" className="text-xs md:text-base text-white/70 hover:text-white transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/coming-soon" className="text-white/70 hover:text-white transition-colors">
+                <Link href="/coming-soon" className="text-xs md:text-base text-white/70 hover:text-white transition-colors">
                   Category
                 </Link>
               </li>
               <li>
-                <Link href="/coming-soon" className="text-white/70 hover:text-white transition-colors">
+                <Link href="/coming-soon" className="text-xs md:text-base text-white/70 hover:text-white transition-colors">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/coming-soon" className="text-white/70 hover:text-white transition-colors">
+                <Link href="/coming-soon" className="text-xs md:text-base text-white/70 hover:text-white transition-colors">
                   Blogs
                 </Link>
               </li>
@@ -68,44 +68,30 @@ export function Footer({ className = '' }: FooterProps) {
             <h3 className="text-lg font-medium mb-6">Categories</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/coming-soon" className="text-white/70 hover:text-white transition-colors">
-                  Landscaping
+                <Link href="/coming-soon" className="text-xs md:text-base text-white/70 hover:text-white transition-colors">
+                  Home Décor
                 </Link>
               </li>
               <li>
-                <Link href="/coming-soon" className="text-white/70 hover:text-white transition-colors">
-                  Home Decor
+                <Link href="/coming-soon" className="text-xs md:text-base text-white/70 hover:text-white transition-colors">
+                  Earthenware
                 </Link>
               </li>
               <li>
-                <Link href="/coming-soon" className="text-white/70 hover:text-white transition-colors">
-                  Terracotta Pebbles
+                <Link href="/coming-soon" className="text-xs md:text-base text-white/70 hover:text-white transition-colors">
+                  Sculptures
+                </Link>
+              </li>
+              <li>
+                <Link href="/coming-soon" className="text-xs md:text-base text-white/70 hover:text-white transition-colors">
+                  Architectural Blocks
                 </Link>
               </li>
             </ul>
           </div>
 
           {/* Categories Column 2 */}
-          <div>
-            <h3 className="text-lg font-medium mb-6 opacity-0">Categories</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/coming-soon" className="text-white/70 hover:text-white transition-colors">
-                  Wall Panelling
-                </Link>
-              </li>
-              <li>
-                <Link href="/coming-soon" className="text-white/70 hover:text-white transition-colors">
-                  Stand-alone Artforms
-                </Link>
-              </li>
-              <li>
-                <Link href="/coming-soon" className="text-white/70 hover:text-white transition-colors">
-                  Utensils
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <div />
 
           {/* Get In Touch */}
           <div>
@@ -114,7 +100,7 @@ export function Footer({ className = '' }: FooterProps) {
               <p className="text-white/70">Email us at</p>
               <a
                 href="mailto:hello@avantrika.com"
-                className="text-white hover:text-white/80 transition-colors block"
+                className="text-xs md:text-base text-white hover:text-white/80 transition-colors block"
               >
                 hello@avantrika.com
               </a>
@@ -131,7 +117,7 @@ export function Footer({ className = '' }: FooterProps) {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors"
+                className="text-xs md:text-base text-white/70 hover:text-white transition-colors"
                 aria-label="Facebook"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -142,7 +128,7 @@ export function Footer({ className = '' }: FooterProps) {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors"
+                className="text-xs md:text-base text-white/70 hover:text-white transition-colors"
                 aria-label="Instagram"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -153,7 +139,7 @@ export function Footer({ className = '' }: FooterProps) {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors"
+                className="text-xs md:text-base text-white/70 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">

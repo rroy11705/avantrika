@@ -8,7 +8,6 @@ export interface Variant {
 }
 
 export interface VariantsProps {
-  title?: string
   variants?: Variant[]
   autoplayDelay?: number
   className?: string

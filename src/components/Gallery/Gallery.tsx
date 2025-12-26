@@ -65,7 +65,7 @@ export function Gallery({
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="text-[#7D2E3E] text-sm md:text-base leading-relaxed font-geist">
+          <p className="text-[#7D2E3E] text-sm md:text-base leading-relaxed ">
             {description}
           </p>
         </motion.div>

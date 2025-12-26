@@ -7,13 +7,13 @@
   --color-red-brown: #6b2a1f;
 
   /* Custom Font Family */
-  --font-family-geist: var(--font-geist), sans-serif;
+  --font-family-sans: var(--font-roboto-serif), serif;
 
   /* Custom Background Images */
   --background-image-hero-gradient: linear-gradient(135deg, #e86741 0%, #b84326 50%, #6b2a1f 100%);
 }
 
 body {
-  font-family: var(--font-family-geist);
+  font-family: var(--font-roboto-serif), serif;
   background: #FFE3C2;
 }

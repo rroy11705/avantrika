@@ -1,12 +1,12 @@
 import React from 'react'
-import { Geist, DM_Serif_Text } from 'next/font/google'
+import { Roboto_Serif, DM_Serif_Text } from 'next/font/google'
 import localFont from 'next/font/local'
 import './styles.css'
 
-const geist = Geist({
+const robotoSerif = Roboto_Serif({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-geist',
+  variable: '--font-roboto-serif',
   display: 'swap',
 })
 
@@ -33,7 +33,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="en">
-      <body className={`${geist.variable} ${dmSerifText.variable} ${zagora.variable}`}>
+      <body className={`${robotoSerif.variable} ${dmSerifText.variable} ${zagora.variable}`}>
         <main>{children}</main>
       </body>
     </html>

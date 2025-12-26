@@ -1,14 +1,14 @@
 [
     {
-        "name": "interior & landscaping",
-        "description": "Terracotta interior & landscaping pieces add earthy warmth, timeless charm, and natural elegance—indoors and out.",
+        "name": "earthenware",
+        "description": "Terracotta earthenware carries fire, soil, and time—hand-shaped earth becoming quiet luxury, warm to touch, enduring, humble, and eternally alive.",
         "image": "/images/variants/1.jpg",
         "price": 180000,
         "currency": "INR",
         "category": "interior"
     },
     {
-        "name": "home decór",
+        "name": "home décor",
         "description": "Elevate your home with decor that blends style and comfort—beautiful accents that turn everyday spaces into inviting stories.",
         "image": "/images/variants/2.jpg",
         "price": 200000,
@@ -16,15 +16,15 @@
         "category": "urban"
     },
     {
-        "name": "wall panelling",
-        "description": "Terracotta wall panelling adds earthy texture, warm tones, and timeless elegance—turning plain walls into statement spaces.",
+        "name": "architectural blocks",
+        "description": "Terracotta Architectural Blocks adds earthy texture, warm tones, and timeless elegance—turning plain walls into statement spaces.",
         "image": "/images/variants/3.jpg",
         "price": 150000,
         "currency": "INR",
         "category": "nature"
     },
     {
-        "name": "stand-alone artforms",
+        "name": "sculptures",
         "description": "Terracotta standalone artworks bring earthy elegance and handcrafted charm—timeless statement pieces for any space.",
         "image": "/images/variants/4.jpg",
         "price": 150000,

@@ -25,12 +25,12 @@ export default function ComingSoonPage() {
         </h1>
 
         {/* Subheading */}
-        <p className="text-xl md:text-2xl text-[#7D2E3E] font-geist">
+        <p className="text-xl md:text-2xl text-[#7D2E3E] ">
           We're crafting something special for you.
         </p>
 
         {/* Description */}
-        <p className="text-base md:text-lg text-[#7D2E3E]/80 font-geist max-w-xl mx-auto">
+        <p className="text-base md:text-lg text-[#7D2E3E]/80  max-w-xl mx-auto">
           This page is currently under construction. Our artisans are working diligently to bring
           you an experience that celebrates heritage, craftsmanship, and timeless beauty.
         </p>

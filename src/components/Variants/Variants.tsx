@@ -9,7 +9,6 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 export function Variants({
-  title = 'variants categorisation',
   variants = variantsData as Variant[],
   autoplayDelay = 5000,
   className = '',
@@ -69,12 +68,12 @@ export function Variants({
   return (
     <section
       ref={sectionRef}
-      className={`relative w-full bg-[#250405] py-16 md:py-24 lg:py-32 overflow-hidden ${className}`}
+      className={`relative w-full bg-[#250405] px-12.5 md:px-0 py-16 md:py-24 lg:py-32 overflow-hidden ${className}`}
     >
       <div className="relative">
         {/* Carousel */}
-        <div className="pt-25" ref={emblaRef}>
-          <div className="flex ml-[250px]">
+        <div className="pt-6" ref={emblaRef}>
+          <div className="flex md:ml-[250px]">
             {variants.map((variant, index) => (
               <VariantCard key={index} variant={variant} />
             ))}
@@ -91,17 +90,23 @@ export function Variants({
         >
           <div className="container mx-auto">
             <h2
-              className="text-5xl md:text-6xl lg:text-[145px] text-[#9B1F00] font-(family-name:--font-zagora) leading-[97%]"
+              className="hidden md:block md:text-6xl lg:text-[145px] text-[#9B1F00] font-(family-name:--font-zagora) leading-[97%]"
               style={{ mixBlendMode: 'plus-lighter' }}
             >
-              {title}
+              Category & Variations
+            </h2>
+            <h2
+              className="md:hidden text-5xl md:text-6xl lg:text-[145px] text-[#9B1F00] font-(family-name:--font-zagora) leading-[97%]"
+              style={{ mixBlendMode: 'plus-lighter' }}
+            >
+              Category
             </h2>
           </div>
         </motion.div>
       </div>
 
       <motion.div
-        className='container mx-auto space-y-6 pl-44 mt-25'
+        className='hidden md:block container mx-auto space-y-6 pl-44 mt-25'
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -122,8 +127,8 @@ export function Variants({
               className="w-fit flex items-center justify-center gap-2 text-[#FFEAD280] border border-[#FFEAD280] rounded-lg px-6 py-4 text-base tracking-wider transition-colors duration-300"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 12H18" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 18V6" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 12H18" stroke="#FFEAD280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 18V6" stroke="#FFEAD280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
 
               Terracotta Pebbles
@@ -140,8 +145,8 @@ export function Variants({
               className="w-fit flex items-center justify-center gap-2 text-[#FFEAD280] border border-[#FFEAD280] rounded-lg px-6 py-4 text-base tracking-wider transition-colors duration-300"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 12H18" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 18V6" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 12H18" stroke="#FFEAD280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 18V6" stroke="#FFEAD280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
 
               Lamps
@@ -158,8 +163,8 @@ export function Variants({
               className="w-fit flex items-center justify-center gap-2 text-[#FFEAD280] border border-[#FFEAD280] rounded-lg px-6 py-4 text-base tracking-wider transition-colors duration-300"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 12H18" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 18V6" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 12H18" stroke="#FFEAD280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 18V6" stroke="#FFEAD280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
 
               Wall Arts
@@ -176,8 +181,8 @@ export function Variants({
               className="w-fit flex items-center justify-center gap-2 text-[#FFEAD280] border border-[#FFEAD280] rounded-lg px-6 py-4 text-base tracking-wider transition-colors duration-300"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 12H18" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 18V6" stroke="#FFEAD280" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 12H18" stroke="#FFEAD280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 18V6" stroke="#FFEAD280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
 
               Ornamentations & Motif Tiles
@@ -192,10 +197,10 @@ export function Variants({
 // VariantCard component
 function VariantCard({ variant }: { variant: Variant }) {
   return (
-    <div className="flex-[0_0_80%] md:flex-[0_0_80%] lg:flex-[0_0_80%] min-w-0 pl-4 md:pl-6">
+    <div className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_80%] min-w-0 pl-0 md:pl-6 pr-4 md:pr-0">
       <div className="overflow-hidden">
         {/* Image Container */}
-        <div className="relative aspect-880/420 rounded-3xl overflow-hidden">
+        <div className="relative aspect-275/200 md:aspect-880/420 rounded-3xl overflow-hidden">
           <img
             src={variant.image}
             alt={variant.name}
@@ -205,17 +210,17 @@ function VariantCard({ variant }: { variant: Variant }) {
         </div>
 
         {/* Content */}
-        <div className="flex flex-row items-center justify-baseline p-6 space-y-4">
+        <div className="flex flex-col md:flex-row items-center justify-baseline py-6 gap-12.5 md:gap-30">
           <div className='flex-1 space-y-2'>
             <h3 className="text-4xl text-[#FFEAD2] leading-tight font-(family-name:--font-zagora)">{variant.name}</h3>
-            <p className="text-[#FFEAD2] text-base leading-relaxed font-geist">
+            <p className="text-[#FFEAD2] text-sm md:text-base leading-relaxed ">
               {variant.description}
             </p>
           </div>
-          <div className='flex-1'>
+          <div className='w-full md:w-fit'>
             <Link
               href="/coming-soon"
-              className="ml-auto w-fit flex items-center justify-center gap-2 bg-[#FFEAD2] text-[#250405] border border-[#250405] rounded-lg px-8 py-4 text-xl tracking-wider transition-colors duration-300"
+              className="ml-auto w-full md:w-fit flex items-center justify-center gap-2 bg-[#FFEAD2] text-[#250405] border border-[#250405] rounded-lg px-8 py-4 text-xl tracking-wider transition-colors duration-300"
             >
               Explore
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

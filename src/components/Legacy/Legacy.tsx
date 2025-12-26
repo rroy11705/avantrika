@@ -1,7 +1,8 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
 
 interface LegacySection {
   title: string
@@ -45,6 +46,40 @@ export function Legacy({
   ],
   className = '',
 }: LegacyProps) {
+  // State for accordion - only one section open at a time
+  const [openSectionIndex, setOpenSectionIndex] = useState<number | null>(0)
+
+  // Toggle function for accordion
+  const toggleSection = (index: number) => {
+    setOpenSectionIndex((prevIndex) => (prevIndex === index ? null : index))
+  }
+
+  // Animation variants for accordion content
+  const contentVariants = {
+    collapsed: {
+      height: 0,
+      opacity: 0,
+      transition: {
+        height: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+        opacity: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
+      },
+    },
+    expanded: {
+      height: 'auto',
+      opacity: 1,
+      transition: {
+        height: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+        opacity: { duration: 0.3, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
+      },
+    },
+  }
+
+  // Animation variants for chevron rotation
+  const chevronVariants = {
+    collapsed: { rotate: 0, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } },
+    expanded: { rotate: 180, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } },
+  }
+
   return (
     <section className={`relative aspect-1380/850 w-full flex items-center justify-center bg-[#F5EDE4] ${className}`}>
       <div className="container mx-auto px-8 md:px-16 lg:px-24 py-16 md:py-24 lg:py-32">
@@ -59,29 +94,65 @@ export function Legacy({
           {mainTitle}
         </motion.h2>
 
-        {/* Sections List */}
-        <div className="space-y-10 md:space-y-12 lg:space-y-16">
+        {/* Desktop View - Grid Layout */}
+        <div className="hidden md:block space-y-10 md:space-y-12 lg:space-y-16">
           {sections.map((section, index) => (
             <motion.div
-              key={index}
-              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-12"
+              key={`desktop-${index}`}
+              className="grid grid-cols-12 gap-6 md:gap-8 lg:gap-12"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="md:col-span-4">
-                <h3 className="text-xl md:text-2xl text-[#7D2E3E] font-medium leading-tight">
-                  {section.title}
-                </h3>
+              <div className="col-span-4">
+                <h3 className="text-2xl text-[#7D2E3E] font-medium leading-tight">{section.title}</h3>
               </div>
-              <div className="md:col-span-8">
-                <p className="text-[#7D2E3E] text-sm md:text-base leading-relaxed font-geist">
-                  {section.description}
-                </p>
+              <div className="col-span-8">
+                <p className="text-[#7D2E3E] text-base leading-relaxed">{section.description}</p>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Mobile View - Accordion Layout */}
+        <div className="md:hidden divide-y divide-[#7D2E3E]/20">
+          {sections.map((section, index) => {
+            const isOpen = openSectionIndex === index
+            return (
+              <div key={`mobile-${index}`}>
+                {/* Accordion Header */}
+                <button
+                  onClick={() => toggleSection(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`legacy-content-${index}`}
+                  className="flex items-center justify-between w-full py-4 text-left"
+                >
+                  <h3 id={`legacy-title-${index}`} className="text-xl text-[#7D2E3E] font-medium leading-tight pr-4">
+                    {section.title}
+                  </h3>
+                  <motion.div variants={chevronVariants} animate={isOpen ? 'expanded' : 'collapsed'}>
+                    <ChevronDown className="h-6 w-6 text-[#7D2E3E] shrink-0" aria-hidden="true" />
+                  </motion.div>
+                </button>
+
+                {/* Accordion Content */}
+                <motion.div
+                  id={`legacy-content-${index}`}
+                  role="region"
+                  aria-labelledby={`legacy-title-${index}`}
+                  variants={contentVariants}
+                  initial={index === 0 ? 'expanded' : 'collapsed'}
+                  animate={isOpen ? 'expanded' : 'collapsed'}
+                  className="overflow-hidden"
+                >
+                  <div className="pb-4">
+                    <p className="text-[#7D2E3E] text-sm leading-relaxed">{section.description}</p>
+                  </div>
+                </motion.div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

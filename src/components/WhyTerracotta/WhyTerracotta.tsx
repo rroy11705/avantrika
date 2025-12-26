@@ -30,7 +30,7 @@ export function WhyTerracotta({ className = '' }: WhyTerracottaProps) {
           </motion.div>
 
           {/* Right side - Content (Scrollable) */}
-          <div className="space-y-75">
+          <div className="space-y-12.5 md:space-y-75">
             {/* Section 1 */}
             <motion.div
               className="space-y-6"
@@ -42,7 +42,7 @@ export function WhyTerracotta({ className = '' }: WhyTerracottaProps) {
               <h2 className="text-4xl md:text-4xl text-[#A42F12] font-(family-name:--font-zagora) leading-tight">
                 Why terracotta works everywhere ?
               </h2>
-              <p className="text-[#A42F12] text-sm md:text-base leading-relaxed font-geist">
+              <p className="text-[#A42F12] text-sm md:text-base leading-relaxed ">
                 Terracotta's earthy tone instantly softens a space. It adds warmth without
                 overpowering, and its natural texture brings depth that glossy, factory-perfect
                 materials just can't match. The result: interiors that feel welcoming and
@@ -61,7 +61,7 @@ export function WhyTerracotta({ className = '' }: WhyTerracottaProps) {
               <h3 className="text-4xl md:text-4xl text-[#A42F12] font-(family-name:--font-zagora) leading-tight">
                 The vibe: effortlessly premium, always earthy
               </h3>
-              <p className="text-[#A42F12] text-sm md:text-base leading-relaxed font-geist">
+              <p className="text-[#A42F12] text-sm md:text-base leading-relaxed ">
                 The vibe: effortlessly premium, always earthy Terracotta doesn't chase trends—it
                 outlasts them. It's the kind of material that makes a space feel curated, calm, and
                 connected to the earth—whether you're styling a modern living room or designing a

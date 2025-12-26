@@ -28,7 +28,20 @@ export function About({
 }: AboutProps) {
   return (
     <section className={`relative aspect-1380/850 w-full flex items-center justify-center ${className}`}>
-      <div className="container mx-auto my-auto px-8 md:px-16 lg:px-24 py-16 md:py-24 lg:py-32">
+      <div className="container mx-auto my-auto px-12.5 md:px-16 lg:px-24 py-16 md:py-24 lg:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 1, ease: [0.22, 1, 0.36, 1] }}
+          className='md:hidden'
+        >
+          <p className="text-sm md:text-base font-light leading-relaxed mb-12.5 ">
+            Avantrika provides bespoke, custom-made solutions for each space. Through meticulous
+            research and planning, they ensure each creation complements its surroundings,
+            enhancing both aesthetics and function. Every piece reflects India's artistic heritage
+            while fitting the modern lifestyle.
+          </p>
+        </motion.div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Illustration */}
           <motion.div
@@ -52,7 +65,7 @@ export function About({
           </motion.div>
 
           {/* Right side - Content */}
-          <div className="h-full flex flex-col justify-between">
+          <div className="h-full flex flex-col justify-between gap-12.5">
             <div className='space-y-8'>
               <motion.h2
                 className="text-5xl md:text-6xl lg:text-5xl font-(family-name:--font-zagora) text-[#98272A] leading-[97%]"
@@ -67,7 +80,7 @@ export function About({
                 {description.map((paragraph, index) => (
                   <motion.p
                     key={index}
-                    className="text-[#98272A] text-sm md:text-base leading-relaxed font-geist"
+                    className="text-[#98272A] text-sm md:text-base leading-relaxed "
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -88,7 +101,7 @@ export function About({
             >
               <Link
                 href={ctaLink}
-                className="w-full flex items-center justify-center text-[#250405] border border-[#250405] rounded-lg px-8 py-4 text-xl tracking-wider hover:bg-[#250405] hover:text-white transition-colors duration-300"
+                className="w-full flex items-center justify-center text-[#250405] border border-[#250405] rounded-lg px-8 py-4 text-base md:text-xl tracking-wider hover:bg-[#250405] hover:text-white transition-colors duration-300"
               >
                 {ctaText}
               </Link>

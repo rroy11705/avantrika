@@ -41,7 +41,7 @@ export function Blog({
   className = '',
 }: BlogProps) {
   return (
-    <section className={`relative w-full bg-[#F5EDE4] py-16 md:py-24 lg:py-32 ${className}`}>
+    <section className={`relative w-full bg-[#F5EDE4] px-12.5 md:px-0 py-16 md:py-24 lg:py-32 ${className}`}>
       <div className="container mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 md:mb-16 gap-6">
@@ -55,7 +55,7 @@ export function Blog({
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#A42F12] font-(family-name:--font-zagora) leading-tight mb-4">
               {title}
             </h2>
-            <p className="text-[#A42F12] text-sm md:text-base leading-relaxed font-geist whitespace-pre-line max-w-2xl">
+            <p className="text-[#A42F12] text-sm md:text-base leading-relaxed  whitespace-pre-line max-w-2xl">
               {subtitle}
             </p>
           </motion.div>
@@ -105,7 +105,7 @@ export function Blog({
                     <h3 className="text-xl md:text-2xl text-white leading-tight">
                       {post.title}
                     </h3>
-                    <p className="text-white/70 text-sm md:text-base leading-relaxed font-geist">
+                    <p className="text-white/70 text-sm md:text-base leading-relaxed ">
                       {post.excerpt}
                     </p>
                   </div>
