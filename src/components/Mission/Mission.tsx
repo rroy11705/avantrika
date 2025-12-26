@@ -23,7 +23,7 @@ export function Mission({
   className = '',
 }: MissionProps) {
   return (
-    <section className={`relative aspect-375/1175 md:aspect-1380/700 w-full flex items-end justify-center bg-[#6A1F21] overflow-hidden ${className}`}>
+    <section className={`relative aspect-auto md:aspect-1380/700 w-full flex items-end justify-center bg-[#6A1F21] overflow-hidden ${className}`}>
       <div className="container mx-auto px-12.5 md:px-0 py-12.5 md:py-24 lg:py-32 md:pb-0!">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left side - Content */}

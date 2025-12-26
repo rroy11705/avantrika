@@ -42,7 +42,7 @@ export function Hero({
           transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <h1 className="text-6xl md:text-[150px] lg:text-[150px] text-[#FFEAD2] md:text-[#FFA72680] font-(family-name:--font-zagora) lowercase leading-tight">
-            the legacy that lasts
+            the <br className='md:hidden' />legacy <br className='md:hidden' />that lasts
           </h1>
         </motion.div>
 
